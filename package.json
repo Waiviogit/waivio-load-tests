@@ -1,0 +1,25 @@
+{
+  "name": "waivio-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "redis": "^2.8.0",
+    "cron": "^2.0.0",
+    "autocannon": "^7.9.0",
+    "lodash": "^4.17.21"
+  }
+}
