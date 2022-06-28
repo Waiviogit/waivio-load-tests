@@ -1,7 +1,7 @@
 exports.REDIS_KEY = {
-  BLOCK: 'test:blocks:hive',
-  POST: 'test:post:hive',
-  HISTORY: 'test:history:hive',
+  BLOCK: 'test:hive:blocks',
+  POST: 'test:hive:post',
+  HISTORY: 'test:hive:history',
 };
 
 exports.NODES_FOR_TEST = {
@@ -21,6 +21,21 @@ exports.NODES_FOR_TEST = {
     'https://api.pharesim.me',
   ],
   REGULAR: [
+    'https://api.hive.blog',
+    'https://anyx.io',
+    'https://api.openhive.network',
+    'https://rpc.ausbit.dev',
+    'https://hive.roelandp.nl',
+    'https://api.c0ff33a.uk',
+    'https://api.deathwing.me',
+    'https://hive-api.arcange.eu',
+    'https://hived.emre.sh',
+    'https://techcoderx.com',
+    'https://hived.privex.io',
+    'https://api.pharesim.me',
+  ],
+  HISTORY: [
+    'https://blocks.waivio.com',
     'https://api.hive.blog',
     'https://anyx.io',
     'https://api.openhive.network',

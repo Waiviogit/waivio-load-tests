@@ -21,5 +21,5 @@ exports.testHiveNodeJob = new CronJob(
   false,
   null,
   null,
-  true,
+  false,
 );

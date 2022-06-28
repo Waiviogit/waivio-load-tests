@@ -1,32 +1,7 @@
-const autocannon = require('autocannon');
 const _ = require('lodash');
 const { redisSetter } = require('../redis');
 const { NODES_FOR_TEST, BODY_PARAMS, REDIS_KEY } = require('../constants/hiveTestParams');
-
-const requestTest = async ({ nodeList, body }) => {
-  const testResults = [];
-  for await (const url of nodeList) {
-    const result = await autocannon({
-      method: 'POST',
-      url,
-      duration: 10,
-      amount: 10,
-      body: JSON.stringify(body),
-    });
-    testResults.push({
-      url,
-      errors: result.errors,
-      latency: result.latency.average,
-      success: result['2xx'],
-    });
-  }
-  return testResults;
-};
-
-const getCache = (nodes) => _.reduce(nodes, (acc, el) => {
-  acc[el.url] = JSON.stringify(_.omit(el, ['url']));
-  return acc;
-}, { nodes: JSON.stringify(_.map(nodes, 'url')) });
+const { requestTest, getCache } = require('./test-helper');
 
 exports.testBlockchain = async () => {
   const testResults = await requestTest({
@@ -73,7 +48,7 @@ exports.testVoteCommentsAccount = async () => {
 
 exports.testHistory = async () => {
   const testResults = await requestTest({
-    nodeList: NODES_FOR_TEST.REGULAR,
+    nodeList: NODES_FOR_TEST.HISTORY,
     body: BODY_PARAMS.HISTORY,
   });
 
