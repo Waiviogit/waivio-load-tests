@@ -20,6 +20,7 @@
     "redis": "^2.8.0",
     "cron": "^2.0.0",
     "autocannon": "^7.9.0",
+    "@hiveio/dhive": "^1.2.7",
     "lodash": "^4.17.21"
   }
 }
